@@ -17,3 +17,11 @@ def home():
         return render_template('index.html', mars=mars)
 
 @app.route('/scrape')
+def scrape():
+        scrape_mars.scrape()
+        return redirect('/', code = 302)
+
+
+
+if__name__ =="__main__":
+   app.run(debug=True)
