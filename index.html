@@ -40,11 +40,37 @@
            <div class="col-md-6">
                <div class="card">
                <div class="card-body" id="img-table">
-                   
+               <div class="col-md-12">
+                   <h5 class="card-title">Current Weather on Mars</h5>
+                   <p class="card-text" id="dark-font">{{mars.weather}}</p>
+                </div>
+               </div>
+               <div class="card-body" id="img-table">
+                <div class="col-md-12">
+                <div>
+                    <h5 class="card title"> Mars Facts</h5>
+                    <p class="card-text"id="dark-font" >{{ mars.fact_table | safe}}</p>
+                </div>
+                </div>
                </div>
                </div>
            </div>
+           </div>  
+     </div>
+    </div>
 
+    <div class="row" id="mars-hemisphres">
+     <div class="col-md-12">
+         <h3><center>Mars Hemispheres</center></h3>
+         {% for hemisphere in mars.hemisphere_image_urls %}
+           <div class="col-md-6">
+            <div class="thumbnail">
+                <img src="{{hemisphere.image_url}}">
+                <h3>{{hemisphere.title}}</h3>
+            </div>
+           </div>
+       {% endfor %}
+     </div>
     </div>
 </body>
 </html>
